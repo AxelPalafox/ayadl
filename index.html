@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayadl | Portal Principal</title>
+    <link rel="icon" type="icon" href="logo.PNG">
+    <title>AYADL</title>
     <style>
-        /* Variables de color para que sea fácil personalizarlos */
         :root {
-            --color-primario: #4F46E5; /* Azul índigo moderno */
+            --color-primario: #4F46E5;
             --color-secundario: #4338CA;
             --texto-oscuro: #1F2937;
             --texto-claro: #6B7280;
-            --fondo: #F9FAFB;
+            --fondo: #d8bf6d;
         }
 
-        /* Reseteo básico */
         * {
             margin: 0;
             padding: 0;
@@ -23,20 +22,20 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('fondo.jpg');
+            background-color: #6b72804f;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
-            line-height: 1.6;
+            line-height: 1;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Barra de navegación superior */
         header {
-            background-color: white;
+            background-color: var(--fondo);
             padding: 1.5rem 5%;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
@@ -52,7 +51,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Sección principal central */
         main {
             flex: 1;
             display: flex;
@@ -76,7 +74,6 @@
             color: white;
         }
 
-        /* Botón de acceso al sistema */
         .boton {
             display: inline-block;
             background-color: var(--color-primario);
@@ -96,17 +93,14 @@
             box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
         }
 
-        /* Pie de página */
         footer {
             text-align: center;
-            padding: 1.5rem;
-            background-color: white;
+            padding: 0.6rem;
+            background-color: var(--fondo);
             color: var(--texto-claro);
             font-size: 0.9rem;
-            border-top: 1px solid #E5E7EB;
         }
 
-        /* Ajuste para celulares pequeños */
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
             p { font-size: 1.1rem; }
@@ -118,7 +112,7 @@
     <header>
     <!-- Reemplaza la línea: <a href="#" class="logo">AYADL</a> por esto: -->
     <a href="#" class="logo">
-        <img src="1.png" alt="Logotipo Ayadl" style="height: 50px; width: auto;">
+        <img src="logo.PNG" alt="Logotipo Ayadl" style="height: 50px; width: auto;">
     </a>
 </header>
 
