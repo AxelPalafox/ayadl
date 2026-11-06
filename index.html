@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayadl | Portal Principal</title>
+    <style>
+        /* Variables de color para que sea fácil personalizarlos */
+        :root {
+            --color-primario: #4F46E5; /* Azul índigo moderno */
+            --color-secundario: #4338CA;
+            --texto-oscuro: #1F2937;
+            --texto-claro: #6B7280;
+            --fondo: #F9FAFB;
+        }
+
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Barra de navegación superior */
+        header {
+            background-color: white;
+            padding: 1.5rem 5%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-primario);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        /* Sección principal central */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: var(--texto-claro);
+        }
+
+        /* Botón de acceso al sistema */
+        .boton {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+        }
+
+        .boton:hover {
+            background-color: var(--color-secundario);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            color: var(--texto-claro);
+            font-size: 0.9rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        /* Ajuste para celulares pequeños */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">AYADL</a>
+        <!-- Aquí puedes agregar un menú después si lo necesitas -->
+    </header>
+
+    <main>
+        <h1>Bienvenido a Ayadl</h1>
+        <p>Este es tu portal central. Desde aquí puedes acceder de forma segura a nuestras herramientas y sistemas personalizados.</p>
+        
+        <!-- Aquí está el enlace que conecta con tu subdominio -->
+        <a href="https://sistema.ayadl.com.mx" class="boton">Entrar al Sistema</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ayadl. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
