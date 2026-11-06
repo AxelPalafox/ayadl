@@ -23,8 +23,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--fondo);
-            color: var(--texto-oscuro);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
             line-height: 1.6;
             display: flex;
             flex-direction: column;
@@ -63,14 +66,14 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #111827;
+            color: white;
         }
 
         p {
             font-size: 1.25rem;
             max-width: 600px;
             margin-bottom: 2.5rem;
-            color: var(--texto-claro);
+            color: white;
         }
 
         /* Botón de acceso al sistema */
