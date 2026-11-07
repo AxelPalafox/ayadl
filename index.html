@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="icon" href="logo.PNG">
-    <title>AYADL</title>
+    <link rel="icon" type="image/png" href="logo.PNG">
+    <title>AyADL</title>
     <style>
         :root {
             --color-primario: #4F46E5;
             --color-secundario: #4338CA;
+            --color-acento: #d8bf6d; /* Tu color dorado/arena original */
+            --texto-claro: #e5e7eb;
             --texto-oscuro: #1F2937;
-            --texto-claro: #6B7280;
-            --fondo: #d8bf6d;
         }
 
         * {
@@ -21,111 +21,210 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #6b72804f;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('logo.png');
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #111827;
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
-            line-height: 1;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background-color: var(--fondo);
-            padding: 1.5rem 5%;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--color-acento);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-primario);
-            text-decoration: none;
-            letter-spacing: -0.5px;
+        .logo img {
+            height: 55px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         main {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            padding: 4rem 5%;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
             text-align: center;
-            padding: 3rem 5%;
+            margin-bottom: 4rem;
         }
 
         h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--color-acento));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--texto-claro);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        img{
+            width: 75px;
+            height: 75px;
+        }
+  
+        .grid-sitios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .tarjeta {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-acento);
+            box-shadow: 0 15px 35px rgba(216, 191, 109, 0.15);
+        }
+
+        .icono {
             font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tarjeta h2 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: white;
         }
 
-        p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2.5rem;
-            color: white;
+        .tarjeta p {
+            color: var(--texto-claro);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            flex-grow: 1;
         }
 
         .boton {
-            display: inline-block;
             background-color: var(--color-primario);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            width: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
         }
 
         .boton:hover {
             background-color: var(--color-secundario);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+        
+        .boton-acento {
+            background-color: var(--color-acento);
+            color: var(--texto-oscuro);
+        }
+        .boton-acento:hover {
+            background-color: #c7ad58;
+            box-shadow: 0 4px 15px rgba(216, 191, 109, 0.4);
         }
 
         footer {
             text-align: center;
-            padding: 0.6rem;
-            background-color: var(--fondo);
-            color: var(--texto-claro);
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #9ca3af;
             font-size: 0.9rem;
+            margin-top: auto;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            p { font-size: 1.1rem; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-text p { font-size: 1rem; }
+            .tarjeta { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-    <!-- Reemplaza la línea: <a href="#" class="logo">AYADL</a> por esto: -->
-    <a href="#" class="logo">
-        <img src="logo.PNG" alt="Logotipo Ayadl" style="height: 50px; width: auto;">
-    </a>
-</header>
+        <a href="#" class="logo">
+            <img src="logo.PNG" alt="Logotipo AyADL">
+        </a>
+    </header>
 
     <main>
-        <h1>Bienvenido a Ayadl</h1>
-        <p>Este es tu portal central. Desde aquí puedes acceder de forma segura a nuestras herramientas y sistemas personalizados.</p>
-        
-        <!-- Aquí está el enlace que conecta con tu subdominio -->
-        <a href="https://ligaindustrial.ayadl.com.mx" class="boton">Entrar al Sistema</a>
+        <div class="hero-text">
+            <h1>AyADL</h1>
+            <p></p>
+        </div>
+
+        <div class="grid-sitios">
+
+            <div class="tarjeta">
+                <div class="icono"><img src="Liga industrial.png"></div>
+                <h2>Liga Industrial</h2>
+                <p>Accede al sistema principal de gestión, operaciones y control industrial.</p>
+                <a href="https://ligaindustrial.ayadl.com.mx" class="boton">Liga Industrial</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono"><img src="Riconsito de Chiapas sf.png"></div>
+                <h2>Rinconsito de Chiapas</h2>
+                <p>Pagina de venta de ropa tipica de Chiapas, Mexico.</p>
+                <a href="https://rc.ayadl.com.mx" class="boton">Rinconcito de Chiapas</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">🎷</div>
+                <h2>Calificaciones</h2>
+                <p>Sitio para ver calificaciones del Maestro Axel Palafox.</p>
+                <a href="https://calificaciones.ayadl.com.mx" class="boton">Calificaciones</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Ayadl. Todos los derechos reservados.</p>
+        <p>&copy; 2026 AyADL. Todos los derechos reservados.</p>
     </footer>
 
 </body>
