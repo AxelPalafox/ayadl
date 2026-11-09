@@ -9,7 +9,7 @@
         :root {
             --color-primario: #4F46E5;
             --color-secundario: #4338CA;
-            --color-acento: #d8bf6d; /* Tu color dorado/arena original */
+            --color-acento: #d8bf6d;
             --texto-claro: #e5e7eb;
             --texto-oscuro: #1F2937;
         }
@@ -177,6 +177,53 @@
             margin-top: auto;
         }
 
+        .seccion-separador {
+            width: 100%;
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .titulo-seccion {
+            font-size: 2.2rem;
+            color: white;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-acento);
+            border-radius: 2px;
+        }
+
+         @keyframes steam {
+            0% { transform: translateY(0) scaleX(1); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-18px) scaleX(1.3); opacity: 0; }
+        }
+        .steam-line-1 { animation: steam 2.2s infinite ease-out; }
+        .steam-line-2 { animation: steam 2.2s infinite ease-out 0.7s; }
+        .steam-line-3 { animation: steam 2.2s infinite ease-out 1.4s; }
+
+        /* Aim Trainer Canvas Glow */
+        #aimCanvas {
+            cursor: crosshair;
+            background: radial-gradient(circle, #181830 0%, #080812 100%);
+        }
+
+        /* Dynamic SVG Banner Fallback Container */
+        .fallback-card-svg {
+            background: linear-gradient(135deg, #0d0e1b 0%, #17102e 50%, #080914 100%);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .hero-text p { font-size: 1rem; }
@@ -220,6 +267,65 @@
                 <p>Sitio para ver calificaciones del Maestro Axel Palafox.</p>
                 <a href="https://calificaciones.ayadl.com.mx" class="boton">Calificaciones</a>
             </div>
+        </div>
+        <div class="seccion-separador">
+            <h2 class="titulo-seccion">Páginas de Alumnos</h2>
+        </div>
+
+        <div class="grid-sitios">
+           <div class="tarjeta">
+                <div class="icono">🎓</div>
+                <h2>La Nata Que Te Mata</h2>
+                <p>Marianna, Mayte y Armando.</p>
+                <a href="https://lanataquemata.ayadl.com.mx" class="boton boton-acento">Ver Proyecto</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">
+                    <svg viewBox="0 0 200 200" style="width: 75px; height: 75px; filter: drop-shadow(0 0 10px rgba(0,240,255,0.6));">
+                        <defs>
+                            <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f0ff" />
+                                <stop offset="100%" stop-color="#7000ff" />
+                            </linearGradient>
+                            <linearGradient id="pinkNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff007f" />
+                                <stop offset="100%" stop-color="#7000ff" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path class="steam-line-1" d="M 85 45 Q 80 30 90 20" stroke="#00f0ff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+                        <path class="steam-line-2" d="M 100 48 Q 105 32 95 18" stroke="#ff007f" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+                        <path class="steam-line-3" d="M 115 45 Q 110 30 120 20" stroke="#00f0ff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+                        <path d="M 50 65 L 150 65 C 155 65 160 70 158 85 L 148 150 C 145 165 130 175 100 175 C 70 175 55 165 52 150 L 42 85 C 40 70 45 65 50 65 Z" fill="#0c0c1a" stroke="url(#cyanPurple)" stroke-width="5" filter="url(#glow)"/>
+                        <path d="M 43 80 C 20 80 15 110 38 125" fill="none" stroke="#00f0ff" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+                        <path d="M 157 80 C 180 80 185 110 162 125" fill="none" stroke="#ff007f" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+                        <path d="M 70 95 L 70 125 M 55 110 L 85 110" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="125" cy="100" r="4.5" fill="#ff007f" filter="url(#glow)"/>
+                        <circle cx="140" cy="110" r="4.5" fill="#00f0ff" filter="url(#glow)"/>
+                        <circle cx="110" cy="110" r="4.5" fill="#ffb700" filter="url(#glow)"/>
+                        <circle cx="125" cy="120" r="4.5" fill="#7000ff" filter="url(#glow)"/>
+                        <path d="M 35 90 C 35 25 165 25 165 90" fill="none" stroke="url(#pinkNeon)" stroke-width="4" stroke-dasharray="6 4"/>
+                    </svg>
+                </div>
+                <h2>Nexus Gaming Cafe</h2>
+                <p>Ximena, Dayra y Fernando.</p>
+                <a href="https://nexusgamingyloungecafe.ayadl.com.mx/" class="boton boton-acento">Ver Proyecto</a>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono"><img src="mccainstudios.png"></div>
+                <h2>Mccain Studios</h2>
+                <p>Gael, Yazid y Noe.</p>
+                <a href="https://mccainstudios.ayadl.com.mx/" class="boton boton-acento">Ver Proyecto</a>
+            </div>
+
         </div>
     </main>
 
